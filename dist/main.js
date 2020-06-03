@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('yo');\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const pics = document.querySelector('.pictures');\nconst dots = document.getElementById('dots');\n\nconst createPic_a = (i) => {\n\tlet e = document.createElement('a');\n\tlet link = ['#img/picture_', i, '.jpeg'].join('');\n\te.setAttribute('href', link);\n\treturn e;\n};\n\nconst createPic_img = (i) => {\n\tlet e = document.createElement('img');\n\tlet link = ['img/picture_', i, '.jpeg'].join('');\n\te.setAttribute('src', link);\n\tlet div = document.createElement('div');\n\tdiv.setAttribute('id', link);\n\tdiv.appendChild(e);\n\treturn div;\n};\n\nconst back = document.createElement('div');\nback.setAttribute('id', 'back');\nback.innerHTML = '&#8249;';\nback.addEventListener('click', (e) => {\n\tarrow(e, 'back');\n});\ndots.appendChild(back);\n\n[...Array(11).keys()].forEach((i) => {\n\tpics.appendChild(createPic_img(i + 1));\n\tdots.appendChild(createPic_a(i + 1));\n});\n\nconst forward = document.createElement('div');\nforward.setAttribute('id', 'forward');\nforward.innerHTML = '&#8250;';\nforward.addEventListener('click', (e) => {\n\tarrow(e, 'forward');\n});\ndots.appendChild(forward);\n\nconst arrow = (e, which) => {};\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
